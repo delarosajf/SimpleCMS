@@ -1,9 +1,9 @@
 <?php
 $mysql = array(
-   "host" => "localhost",
-   "usuario" => "root",
-   "pass" => "",
-   "bd" => "tfw",
+   "host" => "localhost", /* generalmente es localhost */
+   "usuario" => "root", /* generalmente es root */
+   "pass" => "", /* Contraseña */
+   "bd" => "tfw", /* Base de datos */
    "prefijo" => "cms_"
 );
 $mysqli = new mysqli($mysql['host'], $mysql['usuario'], $mysql['pass'], $mysql['bd']);
