@@ -26,9 +26,9 @@ if(isset($_POST['submit'])){
 }
 ?>
 <form action="" method="post">
-   <label for="">Titulo: <input type="text" name="titulo"></label>
-   <label for="">Autor: <input type="text" name="autor"></label>
-   <label for="">Contenido: <textarea name="contenido" id="" cols="80" rows="15"></textarea></label>
+   <label for="titulo">Titulo: <input type="text" id="titulo" name="titulo"></label>
+   <label for="autor">Autor: <input type="text" id="autor" name="autor"></label>
+   <label for="contenido">Contenido: <textarea id="contenido" name="contenido" cols="80" rows="15"></textarea></label>
    <button name="submit">Registrar</button>
 </form>
 <?php
