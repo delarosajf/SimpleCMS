@@ -1,6 +1,4 @@
 <?php
-include('template/header.inc.php');
-include('../includes/config.inc.php');
 $id = (int) $_GET['id'];
 $exit = false;
 $error = array();
@@ -43,5 +41,4 @@ if($resultado->num_rows!=1){
 </form>
 <?php
 }
-include('template/footer.inc.php');
 ?>

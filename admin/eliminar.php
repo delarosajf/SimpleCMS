@@ -1,5 +1,4 @@
 <?php
-include('../includes/config.inc.php');
 $id = (int) $_GET['id'];
 $exit = false;
 $error = array();

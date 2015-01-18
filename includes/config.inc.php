@@ -4,7 +4,7 @@ $mysql = array(
    "usuario" => "root", /* generalmente es root */
    "pass" => "", /* Contraseña */
    "bd" => "tfw", /* Base de datos */
-   "prefijo" => "cms_"
+   "prefijo" => "cms_"  /* prefijo de nuestras tablas */
 );
 $mysqli = new mysqli($mysql['host'], $mysql['usuario'], $mysql['pass'], $mysql['bd']);
 if($mysqli->connect_error) {

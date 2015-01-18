@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
    <meta charset="UTF-8">
-   <title>Document</title>
+   <title>Administración</title>
    <style>
    label, input, textarea{
        display:block;

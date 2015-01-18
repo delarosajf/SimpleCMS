@@ -1,8 +1,5 @@
 <?php
-include('template/header.inc.php');
-include('../includes/config.inc.php');
 $error = array();
-
 if(isset($_POST['submit'])){
    $titulo = htmlentities($_POST['titulo'], ENT_QUOTES);
    $autor = htmlentities($_POST['autor'], ENT_QUOTES);
@@ -31,6 +28,3 @@ if(isset($_POST['submit'])){
    <label for="contenido">Contenido: <textarea id="contenido" name="contenido" cols="80" rows="15"></textarea></label>
    <button name="submit">Registrar</button>
 </form>
-<?php
-include('template/footer.inc.php');
-?>
