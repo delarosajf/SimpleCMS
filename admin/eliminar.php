@@ -7,16 +7,18 @@ if(!isset($id)){
 }
 $resultado = $mysqli->query("SELECT * FROM ".$mysql['prefijo']."crud WHERE id=".$id);
 if($resultado->num_rows!=1){
-   $error[] = 'La entrada seleccionada no existe.';
+   echo 'La entrada seleccionada no existe.';
 }
-if(!$mysqli->query("DELETE FROM ".$mysql['prefijo']."crud WHERE id=".$id)){
-   $error[] = "Hubo un problema al eliminar la entrada.";
-}
-if(empty($error)){
-   echo 'Entrada eliminada correctamente. <a href="../index.php">Ir al inicio</a>';
-}else{
-   foreach($error as $err){
-      echo $err."<br />";
+
+if(isset($_POST['si'])){
+   if(!$mysqli->query("DELETE FROM ".$mysql['prefijo']."crud WHERE id=".$id)){
+      echo "Hubo un problema al eliminar la entrada.";
+   }else{
+      echo 'Entrada eliminada correctamente. <a href="../index.php">Ir al inicio</a>';
    }
-}
-?>
+}else{ ?>
+<form action="" method="post">
+   <div>¿Seguro que desea eliminar la entrada?</div>
+   <button name="si">Si</button> <button type="button" onclick="history.back(1)">No</button>
+</form>
+<?php } ?>

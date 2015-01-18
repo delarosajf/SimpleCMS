@@ -2,7 +2,7 @@
 $error = array();
 if(isset($_POST['submit'])){
    $titulo = htmlentities($_POST['titulo'], ENT_QUOTES);
-   $autor = htmlentities($_POST['autor'], ENT_QUOTES);
+   $autor = htmlentities($_SESSION['user'], ENT_QUOTES);
    $contenido = htmlentities($_POST['contenido'], ENT_QUOTES);
 
    if(empty($titulo) || empty($autor) || empty($contenido)){
@@ -24,7 +24,6 @@ if(isset($_POST['submit'])){
 ?>
 <form action="" method="post">
    <label for="titulo">Titulo: <input type="text" id="titulo" name="titulo"></label>
-   <label for="autor">Autor: <input type="text" id="autor" name="autor"></label>
    <label for="contenido">Contenido: <textarea id="contenido" name="contenido" cols="80" rows="15"></textarea></label>
    <button name="submit">Registrar</button>
 </form>

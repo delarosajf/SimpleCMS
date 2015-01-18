@@ -16,5 +16,6 @@ $stmt = $mysqli->query('SELECT * FROM '.$mysql['prefijo'].'config');
 $get = $stmt->fetch_assoc();
 
 $ruta = 'includes/templates/'.$get['plantilla'].'/';
+session_start();
 include('functions.inc.php');
 ?>

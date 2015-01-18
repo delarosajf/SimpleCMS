@@ -14,8 +14,8 @@ $entrada = $resultado->fetch_assoc(); ?>
 <div class="entrada">
    <h2><?php echo $entrada['titulo']; ?></h2>
    <small>Publicado el <?php echo date("d/m/Y \a \l\a\s h:ia", strtotime($entrada['fecha'])); ?> por <?php echo $entrada['autor']; ?></small>
-   <p><?php echo htmlentities($entrada['contenido']); ?></p>
-   <p><a href="admin/editar.php?id=<?php echo $id; ?>">Editar</a> | <a href="admin/eliminar.php?id=<?php echo $id; ?>">Eliminar</a></p>
+   <p><?php echo nl2br($entrada['contenido']); ?></p>
+   <p><a href="admin/index.php?p=editar&id=<?php echo $id; ?>">Editar</a> | <a href="admin/index.php?p=eliminar&id=<?php echo $id; ?>">Eliminar</a></p>
 </div>
 <?php
 include('footer.inc.php');
