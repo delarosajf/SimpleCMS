@@ -1,0 +1,76 @@
+body{
+  padding-left: 120px;
+}
+body.closed{
+  padding-left: 40.5px;
+}
+body.closed #sidebar{
+  width: 40.5px;
+}
+body.closed #sidebar span{
+  display: none;
+}
+body.closed #sidebar ul li:hover > ul {
+  left: 40.5px;
+}
+body.closed #sidebar ul li > ul {
+  margin-top: -140%;
+}
+#sidebar {
+  background: #191C21;
+  width: 120px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 0;
+  z-index: 5;
+}
+#sidebar nav{
+  position: relative;
+  z-index: 6;
+}
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+#sidebar ul li{
+  list-style: none;
+  margin: 0;
+}
+#sidebar ul li a{
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #798599;
+  display: block;
+  padding: 15px 10px;
+}
+#sidebar ul li a span{
+  font-size:0.9em;
+}
+#sidebar ul li a:hover{
+  color:#9aa3b3;
+}
+#sidebar ul li a.nav-active{
+  color:#e8eaee;
+}
+#sidebar ul li a.nav-active:hover{
+  color:#ffffff;
+}
+
+#sidebar ul li:hover > ul {
+  left: 120px;
+}
+
+#sidebar ul li > ul {
+  position: absolute;
+  background: #242830;
+  left: -200px;
+  min-width: 200px;
+  z-index: 2;
+  margin-top: -50%;
+}
+#sidebar ul li > ul li a:hover{
+  background-color:#2f353e;
+}

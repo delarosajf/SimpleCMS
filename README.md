@@ -1,2 +1,2 @@
 # SimpleCMS
-Este repositorio está creado para llevar un control de los cambios en el tutorial para crear un CMS sencillo.
+CMS sencillo y modulable que utilizaré para mis proyectos. Principalmente basado en el sistema CRUD.

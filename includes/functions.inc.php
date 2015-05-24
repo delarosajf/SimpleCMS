@@ -1,4 +1,5 @@
 <?php
+#TODO: function get_persmiso
 function cortar($string, $your_desired_width){
    /* http://stackoverflow.com/a/79986 */
    $parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
@@ -30,12 +31,12 @@ function new_pass($password){
 }
 if (!function_exists('hash_equals')) {
     /**
-      http://php.net/manual/en/function.hash-equals.php#115664
+     *  http://php.net/manual/en/function.hash-equals.php#115664
      * Timing attack safe string comparison
-     * 
+     *
      * Compares two strings using the same time whether they're equal or not.
      * This function should be used to mitigate timing attacks; for instance, when testing crypt() password hashes.
-     * 
+     *
      * @param string $known_string The string of known length to compare against
      * @param string $user_string The user-supplied string
      * @return boolean Returns TRUE when the two strings are equal, FALSE otherwise.
@@ -74,5 +75,21 @@ if (!function_exists('hash_equals')) {
         }
         return $ret === 0;
     }
+}
+function get_file_data($file, $headers) {
+    $fp = fopen( $file, 'r' );
+    $file_data = fread( $fp, 8192 );
+    fclose( $fp );
+    $file_data = str_replace( "\r", "\n", $file_data );
+
+
+    foreach ( $headers as $field => $regex ) {
+        if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( $regex, '/' ) . ':(.*)$/mi', $file_data, $match ) && $match[1] )
+          $headers[ $field ] = $match[1];
+        else
+          $headers[ $field ] = '';
+    }
+
+    return $headers;
 }
 ?>

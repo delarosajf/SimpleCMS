@@ -8,11 +8,12 @@ if(!isset($_SESSION['user'])){
    header('location:../index.php');
 }
 if(isset($p)){
-   if(in_array($p, array('agregar', 'ver', 'editar', 'eliminar'))){
+   if(in_array($p, array('agregar', 'ver', 'editar', 'eliminar', 'addons'))){
       include($p.'.php');
    }
 }else{
 ?>
+<h2>Inicio</h2>
 Bienvenido a la administración
 <?php
 }
