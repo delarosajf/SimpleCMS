@@ -76,20 +76,4 @@ if (!function_exists('hash_equals')) {
         return $ret === 0;
     }
 }
-function get_file_data($file, $headers) {
-    $fp = fopen( $file, 'r' );
-    $file_data = fread( $fp, 8192 );
-    fclose( $fp );
-    $file_data = str_replace( "\r", "\n", $file_data );
-
-
-    foreach ( $headers as $field => $regex ) {
-        if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( $regex, '/' ) . ':(.*)$/mi', $file_data, $match ) && $match[1] )
-          $headers[ $field ] = $match[1];
-        else
-          $headers[ $field ] = '';
-    }
-
-    return $headers;
-}
 ?>

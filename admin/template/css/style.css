@@ -74,3 +74,9 @@ body.closed #sidebar ul li > ul {
 #sidebar ul li > ul li a:hover{
   background-color:#2f353e;
 }
+a.colapsar {
+    color: rgb(101, 113, 120)!important;
+}
+a.colapsar span{
+  font-size: 0.9em!important;
+}

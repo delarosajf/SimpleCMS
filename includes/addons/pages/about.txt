@@ -1,6 +1,0 @@
-/*
-* Name: Pages
-* Contributors: jfdelarosa
-* Version: 1
-* Description: Admin html pages
-*/

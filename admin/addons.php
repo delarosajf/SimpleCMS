@@ -1,35 +1,36 @@
+<?php
+include('../includes/phphooks.class.php');
+$plugin_list = new phphooks();
+$plugin_headers = $plugin_list->get_plugins_header();
+?>
 <h2>Addons</h2>
 <table class="u-full-width">
-  <thead>
-    <tr>
-			<th></th>
-      <th>Addon</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php
-$dir = '../includes/addons/';
-	foreach(scandir($dir) as $directory):
-		if($directory=='.' or $directory=='..' ):
-			//. y ..
-		else:
-      $file_data = get_file_data($dir.$directory."/about.txt", array('Name' => 'Name','Author' => 'Author','Description' => 'Description','Version' => 'Version'));
-    ?>
-    <tr>
-			<td><input type="checkbox" name="name" value=""></td>
-      <td>
-				<div><strong><?php echo $file_data['Name']; ?></strong></div>
-				<div><a href="#">Activar</a></div>
+	<thead>
+		<tr>
+			<th>Addon</th>
+			<th>Descripción</th>
+		</tr>
+	</thead>
+
+	<tfoot>
+		<tr>
+			<th>Addon</th>
+			<th>Descripción</th>
+		</tr>
+	</tfoot>
+
+	<tbody>
+<?php foreach ($plugin_headers as $plugin_header): ?>
+		<tr>
+			<td>
+				<div><?php echo $plugin_header['Name']; ?></div>
+				<div><?php echo '<a href="index.php?p=addons&action=desactivar&filename=' . $plugin_header ['filename'] . '" title="desactivar el addon">Desactivar</a>'; ?></div>
 			</td>
-      <td>
-				<div><?php echo $file_data['Description']; ?></div>
-				<div>Versión <?php echo $file_data['Version']; ?></div>
+			<td>
+				<div><?php echo $plugin_header ['Description']; ?></div>
+				<div>Versión <?php echo $plugin_header['Version']; ?> | por <a href="<?php echo $plugin_header ['AuthorURI']; ?>"	title="Web del autor"><?php echo $plugin_header ['Author'];	?></a></div>
 			</td>
-    </tr>
-	<?php
-		endif;
-	endforeach;
-	?>
-</tbody>
+		</tr>
+<?php endforeach; ?>
+	</tbody>
 </table>

@@ -22,8 +22,23 @@ if(isset($_POST['submit'])){
    }
 }
 ?>
-<form action="" method="post">
-   <label for="titulo">Titulo: <input type="text" id="titulo" name="titulo"></label>
-   <label for="contenido">Contenido: <textarea id="contenido" name="contenido" cols="80" rows="15"></textarea></label>
-   <button name="submit">Registrar</button>
+<h2>Agregar entrada</h2>
+<form>
+  <div class="row">
+    <div class="six columns">
+      <label for="post_title">Titlo</label>
+      <input name="titulo" class="u-full-width" type="text" id="post_title">
+    </div>
+    <div class="six columns">
+      <label for="post_cat">Categoría</label>
+      <select name="categoria" class="u-full-width" id="post_cat">
+        <option value="Option 1">Categoría 1</option>
+        <option value="Option 2">Categoría 2</option>
+        <option value="Option 3">Categoría 3</option>
+      </select>
+    </div>
+  </div>
+  <label for="post_contenido">Contenido</label>
+  <textarea name="contenido" class="u-full-width" id="post_contenido"></textarea>
+  <button name="submit" class="button-primary">Registrar</button>
 </form>

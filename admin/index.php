@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])){
    header('location:../index.php');
 }
 if(isset($p)){
-   if(in_array($p, array('agregar', 'ver', 'editar', 'eliminar', 'addons'))){
+   if(in_array($p, array('agregar', 'ver', 'editar', 'eliminar', 'addons', 'plugins'))){
       include($p.'.php');
    }
 }else{
